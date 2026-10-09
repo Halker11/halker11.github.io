@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Silvia Gonçalves · Portfólio</title>
+<meta name="description" content="Professora de robótica, autora de livros didáticos e desenvolvedora. Educação, tecnologia e automação.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#faf8f5; --surface:#ffffff; --text:#1d1b22; --muted:#5f5a68; --line:#e7e2dc;
+  --accent:#6b3fd4; --accent-soft:#efe9fc; --chip:#f3f0eb;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#141218; --surface:#1c1a22; --text:#ece9f1; --muted:#a59fb0; --line:#2c2934;
+         --accent:#a98bff; --accent-soft:#272036; --chip:#24212b; }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+nav b{font-family:Montserrat;font-weight:800;letter-spacing:-.02em}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+nav ul a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:500}
+nav ul a:hover{color:var(--text)}
+h1,h2,h3{font-family:Montserrat;letter-spacing:-.02em;line-height:1.15;margin:0}
+.hero{padding:96px 0 72px}
+.eyebrow{color:var(--accent);font-weight:600;font-size:14px;text-transform:uppercase;letter-spacing:.08em}
+.hero h1{font-size:clamp(40px,7vw,68px);font-weight:800;margin:14px 0 20px}
+.hero p{font-size:clamp(17px,2.2vw,20px);color:var(--muted);max-width:640px;margin:0 0 30px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 20px;border-radius:10px;font-weight:600;text-decoration:none;font-size:15px}
+.btn.primary{background:var(--accent);color:#fff}
+.btn.ghost{border:1px solid var(--line);color:var(--text);background:var(--surface)}
+section{padding:64px 0;border-top:1px solid var(--line)}
+section h2{font-size:30px;font-weight:800;margin-bottom:8px}
+.lead{color:var(--muted);margin:0 0 32px;max-width:620px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:10px}
+.card .tag{align-self:flex-start;font-size:12px;font-weight:600;color:var(--accent);background:var(--accent-soft);padding:3px 10px;border-radius:99px}
+.card h3{font-size:19px;font-weight:700}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.card ul{margin:0;padding-left:18px;color:var(--muted);font-size:15px}
+.stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}
+.stack span,.chips span{font-size:12.5px;background:var(--chip);border:1px solid var(--line);padding:3px 9px;border-radius:6px;color:var(--text)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{font-size:14px;padding:6px 12px}
+.timeline{display:grid;gap:0}
+.item{display:grid;grid-template-columns:150px 1fr;gap:24px;padding:22px 0;border-bottom:1px solid var(--line)}
+.item:last-child{border-bottom:0}
+.item .when{color:var(--muted);font-size:14px;font-weight:500;padding-top:2px}
+.item h3{font-size:18px;font-weight:700}
+.item .org{color:var(--accent);font-weight:600;font-size:14px;margin:4px 0 8px}
+.item p{margin:0;color:var(--muted);font-size:15px}
+.note{font-size:14px;color:var(--muted);margin-top:22px}
+footer{border-top:1px solid var(--line);padding:40px 0 60px;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media (max-width:640px){
+  nav ul{display:none}
+  .hero{padding:64px 0 48px}
+  .item{grid-template-columns:1fr;gap:4px}
+  .grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><b>Silvia.</b>
+  <ul><li><a href="#projetos">Projetos</a></li><li><a href="#educacao">Educação</a></li><li><a href="#trajetoria">Trajetória</a></li><li><a href="#contato">Contato</a></li></ul>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="eyebrow">Educação · Tecnologia · Automação</div>
+  <h1>Silvia Gonçalves Silva</h1>
+  <p>Sou professora de robótica, autora e revisora de livros didáticos, e desenvolvedora. Construo sistemas web e automações que tiram o trabalho repetitivo das pessoas, para que elas possam se dedicar ao que importa.</p>
+  <div class="btns">
+    <a class="btn primary" href="#projetos">Ver projetos</a>
+    <a class="btn ghost" href="mailto:silvia.silva0909@gmail.com">E-mail</a>
+    <a class="btn ghost" href="https://www.linkedin.com/in/silviasilva0909" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn ghost" href="https://github.com/Halker11" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</div></header>
+
+<section id="projetos"><div class="wrap">
+  <h2>Projetos</h2>
+  <p class="lead">Sistemas e automações que desenvolvi para instituições, clientes e uso próprio.</p>
+  <div class="grid">
+    <article class="card"><span class="tag">Sistema web · voluntário</span>
+      <h3>TVB System</h3>
+      <p>Sistema de gestão para uma instituição, usado por mais de 300 pessoas.</p>
+      <ul><li>Módulos de cadastro, chamada, PDV, estoque, financeiro, cursos e certificados</li><li>Chamada por QR Code com painel em tempo real</li><li>Integração contábil com o Cordilheira (EBS)</li><li>Backup automático no Google Drive</li></ul>
+      <div class="stack"><span>TypeScript</span><span>Next.js</span><span>MongoDB</span><span>API própria</span></div>
+    </article>
+    <article class="card"><span class="tag">Automação editorial</span>
+      <h3>Imagens para livros didáticos</h3>
+      <p>Lê documentos DOCX, identifica as orientações de imagem, sugere imagens de banco via API e gera o documento final pronto para a diagramação.</p>
+      <div class="stack"><span>TypeScript</span><span>Python</span><span>APIs de imagem</span></div>
+    </article>
+    <article class="card"><span class="tag">IA aplicada</span>
+      <h3>Fluxo de revisão com IA</h3>
+      <p>Automatizei etapas da produção de livros: cotejo de livro x originais, marcação de PDFs no padrão Acrobat, planilhas de erros e auditorias. Tudo passa por conferência humana.</p>
+      <div class="stack"><span>Python</span><span>IA generativa</span><span>PDF</span><span>DOCX</span></div>
+    </article>
+    <article class="card"><span class="tag">PWA com IA</span>
+      <h3>Closet App</h3>
+      <p>Guarda-roupa digital: cadastro de roupas por foto, sugestão de looks conforme a ocasião e o clima, e montagem de mala de viagem.</p>
+      <div class="stack"><span>Next.js</span><span>Prisma</span><span>MongoDB</span><span>Clean Architecture</span></div>
+    </article>
+    <article class="card"><span class="tag">Web app</span>
+      <h3>Biblioteca pessoal</h3>
+      <p>Acervo, histórico de leitura, localização do livro na estante e lista de desejos.</p>
+      <div class="stack"><span>React</span><span>Hono</span><span>MongoDB</span><span>Vite</span></div>
+    </article>
+    <article class="card"><span class="tag">Chatbot · protótipo</span>
+      <h3>Atendente de WhatsApp</h3>
+      <p>Atende o cliente final, tira dúvidas e coleta os dados do pedido. Cada empresa tem sua própria base de conhecimento, e os pedidos chegam organizados num painel.</p>
+      <div class="stack"><span>Python</span><span>LLM (Groq)</span><span>MongoDB</span></div>
+    </article>
+    <article class="card"><span class="tag">Bot</span>
+      <h3>Transcritor de áudios</h3>
+      <p>Transforma áudios do WhatsApp em texto e resume os longos. Funciona pelo menu Compartilhar do Android e do iPhone.</p>
+      <div class="stack"><span>Python</span><span>Whisper</span><span>PWA</span></div>
+    </article>
+  </div>
+  <p class="note">Como a maioria é de clientes ou de uso interno, o código fica privado. Posso apresentar os projetos em uma conversa.</p>
+</div></section>
+
+<section id="educacao"><div class="wrap">
+  <h2>Educação e robótica</h2>
+  <p class="lead">Trabalho com robótica educacional desde 2018, sempre buscando aproximar meninas da ciência e da tecnologia.</p>
+  <div class="grid">
+    <article class="card"><span class="tag">Sala de aula</span><h3>Professora de robótica</h3><p>Dou aulas do Fundamental 1 ao Ensino Médio, além de workshops e formação de professores em LEGO Education, micro:bit, Arduino, impressão 3D e corte a laser.</p></article>
+    <article class="card"><span class="tag">Livros didáticos</span><h3>Autora e revisora</h3><p>Escrevo e reviso livros (PNLD e coleções próprias) de robótica, educação digital, pensamento computacional, educação financeira e empreendedorismo.</p></article>
+    <article class="card"><span class="tag">Produto</span><h3>Buggy Guindaste</h3><p>Produto de robótica educacional que idealizei na Microduino do Brasil, unindo cultura maker e aprendizagem criativa.</p></article>
+    <article class="card"><span class="tag">Prêmio</span><h3>Meninas na robótica, delas pra elas</h3><p>Projeto vencedor da Feira de Ciências da PUCPR, que me rendeu uma bolsa PIBIC Jr.</p></article>
+  </div>
+</div></section>
+
+<section id="trajetoria"><div class="wrap">
+  <h2>Trajetória</h2>
+  <p class="lead">Formação e experiência.</p>
+  <div class="timeline">
+    <div class="item"><div class="when">2018 — atual</div><div><h3>Professora de robótica, autora e revisora</h3><div class="org">ImagiMaker Edu. Tech.</div><p>Aulas, formações, autoria e revisão de livros, e automação do fluxo editorial com Python e IA.</p></div></div>
+    <div class="item"><div class="when">2026 — atual</div><div><h3>Desenvolvedora full stack</h3><div class="org">TVB System (voluntário) e projetos independentes</div><p>Sistemas web, PWAs e automações com TypeScript, Python e MongoDB, publicados na Vercel.</p></div></div>
+    <div class="item"><div class="when">2025</div><div><h3>Estagiária, Digital FSD</h3><div class="org">Renault do Brasil</div><p>Otimização de processos, implantação de ferramentas globais, indicadores e projetos de IA e automação industrial.</p></div></div>
+    <div class="item"><div class="when">2022</div><div><h3>Estagiária de conteúdo</h3><div class="org">Positivo Educacional</div><p>Produção e revisão do Pense+ Matemática, com dinâmicas em LEGO Education e cultura maker.</p></div></div>
+    <div class="item"><div class="when">2021 — 2022</div><div><h3>Designer educacional e professora de robótica</h3><div class="org">Microduino do Brasil</div><p>Desenvolvimento de produtos de robótica educacional e aulas para crianças de 6 a 12 anos.</p></div></div>
+    <div class="item"><div class="when">2021 — 2022</div><div><h3>Iniciação científica (extensão)</h3><div class="org">UFPR</div><p>Prototipagem eletrônica com Arduino para meninas da Educação Básica do litoral do Paraná.</p></div></div>
+    <div class="item"><div class="when">Em curso</div><div><h3>Formação</h3><div class="org">UFPR · FMU · FAC</div><p>Licenciatura em Física (UFPR), Engenharia de Controle e Automação (FMU) e Tecnólogo em Análise e Desenvolvimento de Sistemas (FAC).</p></div></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Ferramentas</h2>
+  <p class="lead">O que uso no dia a dia.</p>
+  <div class="chips"><span>Python</span><span>TypeScript</span><span>Next.js</span><span>React</span><span>MongoDB</span><span>APIs REST</span><span>IA generativa</span><span>C++ / Arduino</span><span>micro:bit</span><span>Scratch</span><span>Git / GitHub</span><span>LEGO Education</span><span>Impressão 3D</span></div>
+  <p class="note">Idiomas: inglês intermediário/avançado · espanhol e francês (leitura)</p>
+</div></section>
+
+<footer id="contato"><div class="wrap">
+  <span>Silvia Gonçalves Silva · Curitiba, PR</span>
+  <span><a href="mailto:silvia.silva0909@gmail.com">silvia.silva0909@gmail.com</a> · <a href="https://www.linkedin.com/in/silviasilva0909" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/Halker11" target="_blank" rel="noopener">GitHub</a></span>
+</div></footer>
+</body>
+</html>
