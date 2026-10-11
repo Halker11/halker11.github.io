@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>marcador-pdf · Silvia Gonçalves</title>
+<meta name="description" content="marcador-pdf: biblioteca Python de código aberto que grava marcações de revisão em PDF no padrão do Adobe Acrobat.">
+<meta name="color-scheme" content="dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<div class="page">
+<nav class="nav">
+  <a class="brand" href="index.html">silvia<span class="acc">_</span>gonçalves</a>
+  <button class="nav-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+  <div class="nav-links" id="menu">
+    <a href="index.html#projetos" class="on">Projetos</a><a href="educacao.html">Educação</a><a href="trajetoria.html">Trajetória</a>
+    <a class="nav-cta" href="contato.html">Contato</a>
+  </div>
+</nav>
+<main>
+<header class="hero-half">
+  <div>
+    <a class="back" href="index.html#projetos">← projetos / automação</a>
+    <h1 class="title sm">marcador-pdf</h1>
+    <p class="lead" style="max-width:none">Grava marcações de revisão em PDF do jeito que o Adobe Acrobat grava: riscar, substituir, inserir e comentar, a partir de uma lista de correções.</p>
+    <div class="rows">
+      <div><span class="label">Tipo</span><span>Biblioteca e linha de comando</span></div>
+      <div><span class="label">Stack</span><span>Python 3.10+ · PyMuPDF · pytest</span></div>
+      <div><span class="label">Licença</span><span>MIT</span></div>
+    </div>
+    <div class="btns"><a class="btn fill" href="https://github.com/Halker11/marcador-pdf" target="_blank" rel="noopener">Ver no GitHub ↗</a></div>
+  </div>
+  <div class="proof"><img src="img/marcador/prova.png" alt="Página de prova com as marcações aplicadas"></div>
+</header>
+<section class="sec split">
+  <h2>O problema</h2>
+  <p class="prose">A revisão de um livro acontece no Acrobat, e a diagramação trabalha pelo painel de Comentários. Quando a lista de correções já existe numa planilha ou num cotejo, refazer tudo à mão custa horas e erra por cansaço.</p>
+</section>
+<section class="sec split">
+  <h2>Como funciona</h2>
+  <div style="display:flex;flex-direction:column;gap:16px;min-width:0">
+    <p class="prose">Recebe a lista e escreve as anotações direto no arquivo. O PDF abre no Acrobat como se tivesse sido marcado à mão.</p>
+    <pre class="code">[{&quot;pagina&quot;: 1, &quot;acao&quot;: &quot;substituir&quot;, &quot;trecho&quot;: &quot;90 °C&quot;, &quot;novo&quot;: &quot;100 °C&quot;},
+ {&quot;pagina&quot;: 1, &quot;acao&quot;: &quot;comentar&quot;, &quot;trecho&quot;: &quot;Figura 1&quot;, &quot;texto&quot;: &quot;Trocar a ilustração.&quot;}]
+
+<span class="acc">$</span> marcador-pdf marcar prova.pdf correcoes.json -o prova_marcada.pdf</pre>
+  </div>
+</section>
+<section class="sec">
+  <div class="split">
+    <h2>O que a engenharia reversa mostrou</h2>
+    <p class="prose">Fiz cada marcação à mão no Acrobat, li o dicionário PDF gravado e ajustei o código até as diferenças zerarem.</p>
+  </div>
+  <div class="tiles">
+    <div class="tile sm"><b>Substituir é um par</b><span>Um Caret e um StrikeOut ligados em grupo. Só assim o painel mostra um item.</span></div>
+    <div class="tile sm"><b>O sinal de inserção é vetorial</b><span>Uma figura de 13 coeficientes, escalada pelo corpo do texto.</span></div>
+    <div class="tile sm"><b>Rótulos em Latin-1 octal</b><span>Em UTF-8, o Acrobat lê os acentos tortos.</span></div>
+  </div>
+</section>
+<section class="sec split">
+  <h2>Limites</h2>
+  <div class="points">
+    <span>Falha de propósito quando o trecho não existe ou se repete: melhor que marcar o lugar errado.</span>
+    <span>Precisa de camada de texto; PDF digitalizado pede OCR antes.</span>
+    <span>Aparência e acerto editorial continuam com olho humano.</span>
+  </div>
+</section>
+<a class="next" href="https://github.com/Halker11/transcritor" target="_blank" rel="noopener">
+  <div><span class="label">próximo projeto · no GitHub</span><b>Transcritor de áudios</b></div><span>→</span>
+</a>
+</main>
+<footer class="foot">
+  <a href="contato.html">silvia.silva0909@gmail.com</a>
+  <div><a href="https://www.linkedin.com/in/silviasilva0909" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/Halker11" target="_blank" rel="noopener">GitHub</a><a href="https://wa.me/5541995893031" target="_blank" rel="noopener">WhatsApp</a></div>
+</footer>
+</div>
+<script src="site.js"></script>
+</body>
+</html>
