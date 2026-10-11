@@ -158,6 +158,30 @@ footer{border-top:1px solid var(--line);padding:40px 0 60px;color:var(--muted);f
 </div></section>
 
 <section><div class="wrap narrow">
+  <h2>Inteligência artificial que não faz conta</h2>
+  <p>Três recursos usam um modelo de linguagem (Groq): a sugestão de categoria na fila Revisar, o resumo do mês em Relatórios e a tela Perguntar, onde a pessoa pergunta sobre o próprio dinheiro em português. A IA é opcional por casa, e qualquer pessoa da casa desliga.</p>
+  <ul>
+    <li><strong>Os números saem do app, nunca do modelo.</strong> No resumo, o app manda os valores já calculados e descarta o texto que voltar com um número que não estava lá. Nas perguntas, o modelo nem vê dado da casa: só escolhe uma consulta de uma lista fechada, e quem executa e responde é o app.</li>
+    <li><strong>Sugestão não é categoria.</strong> O que a IA sugere só vale depois que a pessoa confirma, e até lá não entra em orçamento nem em relatório.</li>
+    <li><strong>Sai do app só o mínimo.</strong> Descrição mascarada (sem e-mail, documento, número de conta nem nome das pessoas da casa), valor, data e tipo de conta. Com a IA desligada, nada da casa é enviado.</li>
+    <li><strong>Resposta do modelo é dado não confiável.</strong> Tudo o que volta é validado, e os testes incluem tentativa de injeção de instruções na descrição de um lançamento.</li>
+    <li><strong>Uso limitado</strong> por casa, por pessoa e por dia, com um teto para o app inteiro.</li>
+  </ul>
+</div></section>
+
+<section><div class="wrap narrow">
+  <h2>Dinheiro conjunto por padrão, divisão para quem quer</h2>
+  <p>Por padrão, dentro da casa o dinheiro é um só: o app soma tudo e nenhuma tela fala em quem pagou ou em quem deve. A casa que reparte as despesas liga o modo "Dividimos as despesas", define os percentuais de cada pessoa (da casa ou por categoria) e passa a ver a tela Acerto.</p>
+  <ul>
+    <li><strong>A conta é uma função pura do domínio.</strong> Recebe os lançamentos e a data de hoje e devolve o saldo de cada pessoa e a lista mínima de pagamentos para zerar.</li>
+    <li><strong>Nenhum centavo some.</strong> A repartição arredonda pelo maior resto, então a soma das partes é exatamente o valor do gasto.</li>
+    <li><strong>Mudar o percentual não reescreve o passado.</strong> A mudança vale do dia em diante, e o histórico guarda o que valia em cada data.</li>
+    <li><strong>Transferência entre as pessoas da casa abate a conta</strong> sozinha, e dá para registrar um acerto feito por fora do banco.</li>
+    <li><strong>Desligado, o modo não existe.</strong> Um teste desenha as telas com o modo desligado e falha se aparecer qualquer palavra do assunto.</li>
+  </ul>
+</div></section>
+
+<section><div class="wrap narrow">
   <h2>Testes</h2>
   <p>São mais de cem arquivos de teste em Vitest, divididos pelas camadas: regras puras no domínio, casos de uso sobre o banco em memória, adaptadores com serviços simulados, e ações e rotas do servidor. Antes de publicar, um roteiro abre todas as telas no build de produção em modo demonstração e confere as rotas internas e as páginas públicas.</p>
   <p>O que ainda depende de aparelho de verdade está escrito na documentação do projeto: biometria, avisos no celular e a janela de conexão com o banco.</p>
