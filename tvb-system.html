@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>TVB System · Silvia Gonçalves</title>
-<meta name="description" content="Estudo de caso do TVB System: sistema de gestão de uma instituição, usado por mais de 300 pessoas.">
+<meta name="description" content="Estudo de caso do TVB System: sistema de gestão de um terreiro, usado por mais de 300 pessoas.">
 <meta name="color-scheme" content="dark">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,7 +26,7 @@
   <div>
     <a class="back" href="index.html#projetos">← projetos / sistemas</a>
     <h1 class="title">TVB System</h1>
-    <p class="lead lg" style="max-width:680px">Sistema de gestão de uma instituição: cadastro, chamada, vendas, estoque, financeiro e cursos num lugar só.</p>
+    <p class="lead lg" style="max-width:680px">Sistema de gestão de um terreiro: corpo mediúnico, crachás, chamada, PDV de festas, estoque, financeiro e biblioteca num lugar só.</p>
   </div>
   <div class="big-number"><b>300+</b><span>pessoas usando no dia a dia</span></div>
 </header>
@@ -36,26 +36,27 @@
   <div><span class="label">Integrações</span><span>Cordilheira (EBS) · Google Drive</span></div>
   <div><span class="label">Status</span><span>Em produção</span></div>
 </div>
+<figure class="shot">
+  <div><img src="img/tvb/capa.png" alt="TVB System: chamadas no computador e corpo mediúnico no celular" width="1600" height="1000"></div>
+  <p>Chamadas no computador e corpo mediúnico no celular. Dados fictícios.</p>
+</figure>
 <section class="sec open" style="padding-top:72px">
-  <div class="sec-head"><h2>Módulos</h2><span>Uma base de dados, uma API própria, seis frentes de trabalho.</span></div>
-  <div class="cells">
-    <div><span class="label">01</span><b>Cadastro</b><span>Pessoas e vínculos com a instituição.</span></div>
-    <div><span class="label acc">02</span><b>Chamada</b><span>Presença por QR Code, com painel em tempo real.</span></div>
-    <div><span class="label">03</span><b>PDV</b><span>Vendas no balcão.</span></div>
-    <div><span class="label">04</span><b>Estoque</b><span>Entradas, saídas e saldo dos itens.</span></div>
-    <div><span class="label acc">05</span><b>Financeiro</b><span>Lançamentos com integração contábil ao Cordilheira.</span></div>
-    <div><span class="label">06</span><b>Cursos e certificados</b><span>Turmas e emissão de certificados.</span></div>
-  </div>
+  <div class="sec-head"><h2>Módulos</h2><span>Uma base de dados, uma API própria, seis frentes de trabalho. Toque para ver cada uma.</span></div>
+  <div class="tabs" role="tablist" data-abas="#modulo"><button type="button" role="tab" aria-selected="true" data-img="img/tvb/mod-mediuns.png" data-desc="Cadastro de médiuns, terapeutas e assistências, com amaci, funções na gira e status de acesso."><span class="label">01</span><b>Corpo mediúnico</b></button><button type="button" role="tab" aria-selected="false" data-img="img/tvb/sistema.png" data-desc="Cada gira com presentes, negados e duplicados, quem registrou e a que horas."><span class="label">02</span><b>Chamadas</b></button><button type="button" role="tab" aria-selected="false" data-img="img/tvb/mod-pdv.png" data-desc="Caixa em tela cheia para as festas: cardápio, carrinho, vouchers e vendas que esperam a internet voltar."><span class="label">03</span><b>PDV de festas</b></button><button type="button" role="tab" aria-selected="false" data-img="img/tvb/mod-estoque.png" data-desc="O que tem, o que falta e o que está abaixo do mínimo, com lista de reposição e contagem."><span class="label">04</span><b>Estoque</b></button><button type="button" role="tab" aria-selected="false" data-img="img/tvb/mod-financeiro.png" data-desc="Saldo de cada conta, entradas e saídas do mês e o arquivo contábil para o Cordilheira."><span class="label">05</span><b>Financeiro</b></button><button type="button" role="tab" aria-selected="false" data-img="img/tvb/mod-biblioteca.png" data-desc="Acervo com exemplares, empréstimos e contribuições dos membros."><span class="label">06</span><b>Biblioteca</b></button></div>
+  <figure class="tab-view" id="modulo">
+    <div class="frame"><img src="img/tvb/mod-mediuns.png" alt="Corpo mediúnico" width="1440" height="900" loading="lazy"></div>
+    <figcaption><span><b>Corpo mediúnico.</b> <span class="desc">Cadastro de médiuns, terapeutas e assistências, com amaci, funções na gira e status de acesso.</span></span><span class="label"><span class="n">01</span> / 06 · dados fictícios</span></figcaption>
+  </figure>
 </section>
 <section class="sec">
   <div class="split">
     <h2>Destaque: chamada por QR Code</h2>
-    <p class="prose">A presença é registrada pela leitura de um QR Code, e quem coordena acompanha a chegada das pessoas num painel que se atualiza sozinho.</p>
+    <p class="prose">O médium apresenta o crachá, o celular do operador lê o QR Code e confirma a presença na hora, mesmo sem internet. A secretaria confere cada gira no painel: quem veio, quem foi barrado e quem tentou registrar duas vezes.</p>
   </div>
-  <div class="tiles">
-    <div class="tile sm"><span class="slash">1 · identificação</span><b>Cada pessoa tem o seu código</b></div>
-    <div class="tile sm"><span class="slash">2 · leitura</span><b>A presença entra na hora</b></div>
-    <div class="tile sm"><span class="slash">3 · painel</span><b>Atualiza em tempo real</b></div>
+  <div class="trio">
+    <figure><div><img src="img/tvb/cracha.png" alt="Crachá com QR Code" loading="lazy"></div><span class="cap"><b>1. Identificação.</b> Cada médium tem um crachá com QR Code.</span></figure>
+    <figure><div><img src="img/tvb/leitura.png" alt="Leitura do crachá no celular" loading="lazy"></div><span class="cap"><b>2. Leitura.</b> O celular lê o crachá e confirma na hora, até sem internet.</span></figure>
+    <figure><div><img src="img/tvb/painel-ao-vivo.png" alt="Conferência da chamada" loading="lazy"></div><span class="cap"><b>3. Conferência.</b> Presentes, negados e duplicados por gira.</span></figure>
   </div>
 </section>
 <section class="sec split">
@@ -70,8 +71,8 @@
   <div class="tags"><span>TypeScript</span><span>Next.js</span><span>MongoDB</span><span>API própria</span><span>Google Drive API</span></div>
   <p class="small">Código privado, por ser de uma instituição. Apresento o sistema numa conversa.</p>
 </section>
-<a class="next" href="marcador-pdf.html">
-  <div><span class="label">próximo projeto</span><b>marcador-pdf</b></div><span>→</span>
+<a class="next" href="finansilva.html">
+  <div><span class="label">próximo projeto</span><b>FinanSilva</b></div><span>→</span>
 </a>
 </main>
 <footer class="foot">

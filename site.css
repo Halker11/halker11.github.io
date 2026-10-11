@@ -255,3 +255,42 @@ a.card:hover{border-color:#4a4e44;color:var(--text)}
   .foot{flex-direction:column;align-items:flex-start;padding:28px var(--pad) 40px;font-size:12px}
   .foot div{gap:18px}
 }
+
+/* quadros de imagem, abas de módulos, trio de passos e retrato */
+.frame{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--panel)}
+.frame img{width:100%}
+.tabs{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
+.tabs button{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;gap:6px;padding:14px 16px;border:1px solid var(--line);border-radius:12px}
+.tabs button:hover{border-color:#4a4e44}
+.tabs button:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.tabs b{font-size:15px;font-weight:600}
+.tabs button[aria-selected=true]{border-color:var(--acc);background:var(--panel)}
+.tabs button[aria-selected=true] .label{color:var(--acc)}
+.tab-view{margin:0;display:flex;flex-direction:column;gap:14px}
+.tab-view figcaption{display:flex;justify-content:space-between;align-items:baseline;gap:24px;font-size:17px;line-height:1.6;color:var(--muted)}
+.tab-view figcaption>span:first-child{max-width:760px}
+.tab-view figcaption b{color:var(--text);font-weight:600}
+.tab-view figcaption .label{white-space:nowrap}
+.trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.trio figure{margin:0;display:flex;flex-direction:column;gap:12px}
+.trio div{aspect-ratio:4/3;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.trio img{width:100%;height:100%;object-fit:cover;object-position:top left}
+.trio .cap{font-size:15px}
+.phones.tall div{aspect-ratio:366/820}
+.hero-grid.about{grid-template-columns:minmax(0,1fr) 320px;gap:64px;padding:96px var(--pad) 72px}
+.portrait{aspect-ratio:4/5;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:center top}
+@media (max-width:1000px){
+  .tabs{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .hero-grid.about{grid-template-columns:minmax(0,1fr) 220px;gap:32px;align-items:center}
+}
+@media (max-width:700px){
+  .tabs{display:flex;overflow-x:auto;margin:0 calc(-1*var(--pad));padding:0 var(--pad) 4px}
+  .tabs button{flex:none;padding:12px 14px;border-radius:10px;white-space:nowrap}
+  .tabs .label{display:none}
+  .tab-view figcaption{flex-direction:column;gap:6px;font-size:15px}
+  .trio{grid-template-columns:1fr}
+  .frame,.portrait{border-radius:14px}
+  .hero-grid.about{grid-template-columns:1fr;padding:40px var(--pad) 24px;gap:20px}
+  .portrait{max-width:220px}
+}

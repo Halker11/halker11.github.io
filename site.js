@@ -30,3 +30,21 @@ document.querySelectorAll('.copy').forEach((botao) => {
     volta = setTimeout(() => { botao.textContent = 'Copiar'; botao.classList.remove('done'); }, 1800);
   });
 });
+
+// Abas (módulos do TVB System): troca a imagem e a legenda do quadro
+document.querySelectorAll('[data-abas]').forEach((abas) => {
+  const quadro = document.querySelector(abas.dataset.abas);
+  const botoes = [...abas.querySelectorAll('button')];
+  abas.addEventListener('click', (e) => {
+    const botao = e.target.closest('button');
+    if (!botao) return;
+    botoes.forEach((b) => b.setAttribute('aria-selected', b === botao));
+    const nome = botao.querySelector('b').textContent;
+    const img = quadro.querySelector('img');
+    img.src = botao.dataset.img;
+    img.alt = nome;
+    quadro.querySelector('figcaption b').textContent = nome + '.';
+    quadro.querySelector('.desc').textContent = botao.dataset.desc;
+    quadro.querySelector('.n').textContent = String(botoes.indexOf(botao) + 1).padStart(2, '0');
+  });
+});

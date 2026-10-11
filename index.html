@@ -44,8 +44,17 @@
     <div class="chips" data-filtro="#projetos .card"><button aria-pressed="true" data-cat="">Todos 11</button><button aria-pressed="false" data-cat="Sistemas">Sistemas 3</button><button aria-pressed="false" data-cat="Sites">Sites 2</button><button aria-pressed="false" data-cat="Automação">Automação 3</button><button aria-pressed="false" data-cat="IA">IA 3</button></div>
   </div>
   <div class="cards">
+    <a class="card" data-cat="Sistemas" href="tvb-system.html">
+      <div class="cover"><img src="img/tvb/capa.png" alt="" loading="lazy"></div>
+      <div class="card-body">
+        <div class="card-top"><span>Sistemas</span><span class="acc">estudo de caso</span></div>
+        <span class="card-name">TVB System</span>
+        <span class="card-desc">Gestão de uma instituição com 300+ usuários: chamada por QR Code, PDV, estoque e financeiro.</span>
+        <span class="card-stack">TypeScript · Next.js · MongoDB</span>
+      </div>
+    </a>
     <a class="card" data-cat="Sistemas" href="finansilva.html">
-      <div class="cover"><img src="img/finansilva/desktop.png" alt="" loading="lazy"></div>
+      <div class="cover"><img src="img/finansilva/capa.png" alt="" loading="lazy"></div>
       <div class="card-body">
         <div class="card-top"><span>Sistemas</span><span class="acc">estudo de caso</span></div>
         <span class="card-name">FinanSilva</span>
@@ -53,13 +62,22 @@
         <span class="card-stack">Next.js · Prisma · Pluggy · Vitest</span>
       </div>
     </a>
-    <a class="card" data-cat="Automação" href="marcador-pdf.html">
-      <div class="cover"><img src="img/marcador/prova.png" alt="" loading="lazy"></div>
+    <div class="card" data-cat="Sistemas">
+      <div class="cover"><img src="img/biblioteca/capa.png" alt="" loading="lazy"></div>
       <div class="card-body">
-        <div class="card-top"><span>Automação</span><span class="acc">open source</span></div>
-        <span class="card-name">marcador-pdf</span>
-        <span class="card-desc">Grava marcações de revisão em PDF no padrão do Acrobat, por engenharia reversa.</span>
-        <span class="card-stack">Python · PyMuPDF</span>
+        <div class="card-top"><span>Sistemas</span><span class="acc"></span></div>
+        <span class="card-name">Biblioteca pessoal</span>
+        <span class="card-desc">Acervo, histórico de leitura e a posição de cada livro na estante.</span>
+        <span class="card-stack">React · Hono · Cloudflare D1</span>
+      </div>
+    </div>
+    <a class="card" data-cat="Sites" href="https://gparts.vercel.app" target="_blank" rel="noopener">
+      <div class="cover"><img src="img/gparts/capa.png" alt="" loading="lazy"></div>
+      <div class="card-body">
+        <div class="card-top"><span>Sites</span><span class="acc">no ar</span></div>
+        <span class="card-name">GParts</span>
+        <span class="card-desc">Marca, design system e site da minha empresa de soluções digitais.</span>
+        <span class="card-stack">React · Vite · Vercel</span>
       </div>
     </a>
     <a class="card" data-cat="Sites" href="https://agilbandeiras.vercel.app" target="_blank" rel="noopener">
@@ -71,39 +89,17 @@
         <span class="card-stack">HTML · CSS · JavaScript</span>
       </div>
     </a>
-    <a class="card" data-cat="Sistemas" href="tvb-system.html">
+    <a class="card" data-cat="IA" href="atendente.html">
+      <div class="cover"><img src="img/atendente/capa.png" alt="" loading="lazy"></div>
       <div class="card-body">
-        <div class="card-top"><span>Sistemas</span><span class="acc">estudo de caso</span></div>
-        <span class="card-name">TVB System</span>
-        <span class="card-desc">Gestão de uma instituição com 300+ usuários: chamada por QR Code, PDV, estoque e financeiro.</span>
-        <span class="card-stack">TypeScript · Next.js · MongoDB</span>
-      </div>
-    </a>
-    <div class="card" data-cat="IA">
-      <div class="card-body">
-        <div class="card-top"><span>IA</span><span class="acc"></span></div>
-        <span class="card-name">Fluxo de revisão com IA</span>
-        <span class="card-desc">Cotejo de livros, marcação de PDFs e auditorias, sempre com conferência humana.</span>
-        <span class="card-stack">Python · IA generativa</span>
-      </div>
-    </div>
-    <div class="card" data-cat="IA">
-      <div class="card-body">
-        <div class="card-top"><span>IA</span><span class="acc"></span></div>
+        <div class="card-top"><span>IA</span><span class="acc">protótipo</span></div>
         <span class="card-name">Atendente de WhatsApp</span>
         <span class="card-desc">Atende o cliente, coleta o pedido e entrega tudo organizado num painel.</span>
         <span class="card-stack">Python · Groq · MongoDB</span>
       </div>
-    </div>
-    <div class="card" data-cat="Automação">
-      <div class="card-body">
-        <div class="card-top"><span>Automação</span><span class="acc"></span></div>
-        <span class="card-name">Imagens para livros</span>
-        <span class="card-desc">Lê o DOCX, encontra as orientações de imagem e sugere fotos de banco via API.</span>
-        <span class="card-stack">TypeScript · Python</span>
-      </div>
-    </div>
+    </a>
     <a class="card" data-cat="Automação" href="https://github.com/Halker11/transcritor" target="_blank" rel="noopener">
+      <div class="cover"><img src="img/transcritor/resultado.png" alt="" loading="lazy"></div>
       <div class="card-body">
         <div class="card-top"><span>Automação</span><span class="acc">open source</span></div>
         <span class="card-name">Transcritor de áudios</span>
@@ -112,6 +108,7 @@
       </div>
     </a>
     <div class="card" data-cat="IA">
+      <div class="cover"><img src="img/closet/looks.png" alt="" loading="lazy"></div>
       <div class="card-body">
         <div class="card-top"><span>IA</span><span class="acc"></span></div>
         <span class="card-name">Closet App</span>
@@ -119,22 +116,33 @@
         <span class="card-stack">Next.js · Prisma · MongoDB</span>
       </div>
     </div>
-    <a class="card" data-cat="Sites" href="https://gparts.vercel.app" target="_blank" rel="noopener">
+    <div class="card" data-cat="Automação">
+      <div class="cover"><img src="img/imagens/sugestoes.png" alt="" loading="lazy"></div>
       <div class="card-body">
-        <div class="card-top"><span>Sites</span><span class="acc">no ar</span></div>
-        <span class="card-name">GParts</span>
-        <span class="card-desc">Marca, design system e site da minha empresa de soluções digitais.</span>
-        <span class="card-stack">React · Vite · Vercel</span>
-      </div>
-    </a>
-    <div class="card" data-cat="Sistemas">
-      <div class="card-body">
-        <div class="card-top"><span>Sistemas</span><span class="acc"></span></div>
-        <span class="card-name">Biblioteca pessoal</span>
-        <span class="card-desc">Acervo, histórico de leitura e a posição de cada livro na estante.</span>
-        <span class="card-stack">React · Hono · Cloudflare D1</span>
+        <div class="card-top"><span>Automação</span><span class="acc"></span></div>
+        <span class="card-name">Imagens para livros</span>
+        <span class="card-desc">Lê o DOCX, encontra as orientações de imagem e sugere fotos de banco via API.</span>
+        <span class="card-stack">TypeScript · Python</span>
       </div>
     </div>
+    <div class="card" data-cat="IA">
+      <div class="cover"><img src="img/revisao/planilha.png" alt="" loading="lazy"></div>
+      <div class="card-body">
+        <div class="card-top"><span>IA</span><span class="acc"></span></div>
+        <span class="card-name">Fluxo de revisão com IA</span>
+        <span class="card-desc">Cotejo de livros, marcação de PDFs e auditorias, sempre com conferência humana.</span>
+        <span class="card-stack">Python · IA generativa</span>
+      </div>
+    </div>
+    <a class="card" data-cat="Automação" href="marcador-pdf.html">
+      <div class="cover"><img src="img/marcador/prova.png" alt="" loading="lazy"></div>
+      <div class="card-body">
+        <div class="card-top"><span>Automação</span><span class="acc">open source</span></div>
+        <span class="card-name">marcador-pdf</span>
+        <span class="card-desc">Grava marcações de revisão em PDF no padrão do Acrobat, por engenharia reversa.</span>
+        <span class="card-stack">Python · PyMuPDF</span>
+      </div>
+    </a>
   </div>
   <p class="small">A maioria é de clientes ou uso interno, então o código fica privado. Apresento qualquer um deles numa conversa.</p>
 </section>
