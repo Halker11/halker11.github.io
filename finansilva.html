@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FinanSilva · Silvia Gonçalves</title>
+<meta name="description" content="Estudo de caso do FinanSilva: PWA de finanças da casa com Open Finance, arquitetura em camadas e isolamento de dados por casa.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#faf8f5; --surface:#ffffff; --text:#1d1b22; --muted:#5f5a68; --line:#e7e2dc;
+  --accent:#6b3fd4; --accent-soft:#efe9fc; --chip:#f3f0eb;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#141218; --surface:#1c1a22; --text:#ece9f1; --muted:#a59fb0; --line:#2c2934;
+         --accent:#a98bff; --accent-soft:#272036; --chip:#24212b; }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+img{max-width:100%;height:auto;display:block}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+.narrow{max-width:720px}
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+nav b{font-family:Montserrat;font-weight:800;letter-spacing:-.02em}
+nav a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:500}
+nav a:hover{color:var(--text)}
+nav b a{color:var(--text);font-size:inherit;font-weight:inherit}
+h1,h2,h3{font-family:Montserrat;letter-spacing:-.02em;line-height:1.15;margin:0}
+.hero{padding:72px 0 40px}
+.eyebrow{color:var(--accent);font-weight:600;font-size:14px;text-transform:uppercase;letter-spacing:.08em}
+.hero h1{font-size:clamp(40px,7vw,64px);font-weight:800;margin:14px 0 18px}
+.hero p{font-size:clamp(17px,2.2vw,20px);color:var(--muted);max-width:660px;margin:0 0 28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 20px;border-radius:10px;font-weight:600;text-decoration:none;font-size:15px}
+.btn.primary{background:var(--accent);color:#fff}
+.btn.ghost{border:1px solid var(--line);color:var(--text);background:var(--surface)}
+.shot{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fbf5f3}
+.phones{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;align-items:start}
+.phones figure,.wide{margin:0}
+.phones img{border:1px solid var(--line);border-radius:22px}
+figcaption{font-size:13.5px;color:var(--muted);margin-top:10px}
+section{padding:56px 0;border-top:1px solid var(--line)}
+section h2{font-size:28px;font-weight:800;margin-bottom:14px}
+section p{color:var(--muted);margin:0 0 14px}
+section li{color:var(--muted);margin-bottom:8px}
+section ul{padding-left:20px;margin:0}
+section strong{color:var(--text);font-weight:600}
+.layers{display:grid;gap:0;margin:22px 0 6px}
+.layer{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.layer h3{font-size:16px;font-weight:700}
+.layer h3 code{font:600 13px ui-monospace,Consolas,monospace;color:var(--accent);background:var(--accent-soft);padding:2px 7px;border-radius:6px;margin-left:6px}
+.layer p{margin:4px 0 0;font-size:15px}
+.arrow{text-align:center;color:var(--muted);font-size:13px;padding:6px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px;margin-top:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px}
+.card h3{font-size:17px;font-weight:700;margin-bottom:6px}
+.card p{margin:0;font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{font-size:14px;background:var(--chip);border:1px solid var(--line);padding:6px 12px;border-radius:6px}
+.note{font-size:14px;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:40px 0 60px;color:var(--muted);font-size:14px}
+@media (max-width:720px){
+  .phones{grid-template-columns:repeat(2,1fr)}
+  .hero{padding:48px 0 32px}
+}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><b><a href="index.html">Silvia.</a></b>
+  <a href="index.html#projetos">← Todos os projetos</a>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="eyebrow">PWA · Open Finance · Estudo de caso</div>
+  <h1>FinanSilva</h1>
+  <p>App de finanças da casa. Lê as contas e os cartões de cada pessoa pelo Open Finance e mostra, num lugar só, onde o dinheiro entra, onde sai, as dívidas, o orçamento e o que já está comprometido no mês.</p>
+  <div class="btns">
+    <a class="btn primary" href="https://finansilva.vercel.app" target="_blank" rel="noopener">Ver o site do app</a>
+    <a class="btn ghost" href="index.html#projetos">Voltar ao portfólio</a>
+  </div>
+</div></header>
+
+<div class="wrap" style="padding-bottom:56px">
+  <figure class="wide">
+    <div class="shot"><img src="img/finansilva/desktop.png" alt="Tela inicial do FinanSilva no computador: saldo nas contas, lançamentos para revisar, últimos lançamentos, gastos por categoria e dívidas que vencem logo" width="1440" height="900"></div>
+    <figcaption>Tela inicial no computador. Todas as imagens desta página usam dados fictícios.</figcaption>
+  </figure>
+</div>
+
+<section><div class="wrap narrow">
+  <h2>O problema</h2>
+  <p>O dinheiro de uma casa fica espalhado: cada pessoa tem os seus bancos e os seus cartões, e as parcelas e os empréstimos moram em aplicativos diferentes. Para saber quanto sobra no mês, alguém precisa abrir tudo e somar.</p>
+  <p>O FinanSilva faz essa soma sozinho. Cada pessoa conecta os próprios bancos (o app só lê, não movimenta), os lançamentos chegam todo dia e a casa enxerga um quadro único. Comecei a construir para usar em casa, e hoje o app atende várias casas, com acesso só por convite.</p>
+</div></section>
+
+<section><div class="wrap">
+  <h2>No celular</h2>
+  <p class="narrow">É um PWA: abre no navegador e pode ser instalado na tela inicial, com entrada por digital ou rosto e avisos de vencimento.</p>
+  <div class="phones" style="margin-top:22px">
+    <figure><img src="img/finansilva/inicio.png" alt="Tela Início no celular" width="780" height="2436" loading="lazy"><figcaption><strong>Início.</strong> Saldo, previsão de fechamento do mês e o que vence logo.</figcaption></figure>
+    <figure><img src="img/finansilva/revisar.png" alt="Tela Revisar no celular" width="780" height="1688" loading="lazy"><figcaption><strong>Revisar.</strong> Uma fila rápida para categorizar o que chegou do banco e criar regras.</figcaption></figure>
+    <figure><img src="img/finansilva/dividas.png" alt="Tela Dívidas no celular" width="780" height="1592" loading="lazy"><figcaption><strong>Dívidas.</strong> Cada parcela no lugar, com baixa automática quando o débito aparece no banco.</figcaption></figure>
+    <figure><img src="img/finansilva/orcamento.png" alt="Tela Orçamento no celular" loading="lazy"><figcaption><strong>Orçamento.</strong> Limites por categoria e cofrinhos para objetivos.</figcaption></figure>
+  </div>
+</div></section>
+
+<section><div class="wrap narrow">
+  <h2>Arquitetura</h2>
+  <p>Monorepo em TypeScript com quatro pacotes, no estilo Clean Architecture. A dependência só anda em um sentido: de fora para dentro.</p>
+  <div class="layers">
+    <div class="layer"><h3>Web <code>apps/web</code></h3><p>Next.js 16 (App Router): telas, ações do servidor, rotas de API, sessão e PWA.</p></div>
+    <div class="arrow">↓ depende de</div>
+    <div class="layer"><h3>Infraestrutura <code>packages/infrastructure</code></h3><p>Implementa as portas: Prisma com MongoDB, Pluggy (Open Finance), WebAuthn, Web Push, cifra, e-mail e um banco em memória para o modo demonstração e os testes.</p></div>
+    <div class="arrow">↓ depende de</div>
+    <div class="layer"><h3>Aplicação <code>packages/application</code></h3><p>Casos de uso e portas. Só fala com o mundo por interfaces: repositórios, provedor bancário, relógio, enviador de avisos.</p></div>
+    <div class="arrow">↓ depende de</div>
+    <div class="layer"><h3>Domínio <code>packages/domain</code></h3><p>Tipos e funções puras: dinheiro em centavos, faturas, parcelas, orçamento, previsão do mês. Não conhece banco de dados, framework nem relógio.</p></div>
+  </div>
+  <p>Na prática, isso deixa as regras de dinheiro testáveis sem subir nada: o domínio recebe a data de hoje por parâmetro, e os casos de uso rodam nos testes sobre o banco em memória. Sem a variável do banco, o app inteiro abre em modo demonstração, com dados fictícios.</p>
+</div></section>
+
+<section><div class="wrap narrow">
+  <h2>Uma casa nunca vê o dinheiro de outra</h2>
+  <p>Todas as casas usam o mesmo app e o mesmo banco de dados. O isolamento é a regra mais importante do sistema e não depende de ninguém lembrar de filtrar: há três camadas, e as três precisam falhar juntas para um dado vazar.</p>
+  <ul>
+    <li><strong>A casa vem do cadastro, nunca do navegador.</strong> A sessão é conferida no banco a cada pedido, e nenhum formulário ou endereço escolhe a casa.</li>
+    <li><strong>Os repositórios nascem presos a uma casa.</strong> A fábrica põe o identificador da casa em toda leitura e em toda gravação. Os casos de uso nem sabem que existem casas.</li>
+    <li><strong>Uma guarda no cliente do banco.</strong> Uma extensão do Prisma recusa, antes de chegar ao banco, qualquer operação em dado financeiro que venha sem a casa, que tente trocar a casa de um registro ou que use comando cru.</li>
+  </ul>
+  <p style="margin-top:14px">Os testes atacam isso de propósito. Cada ação do servidor tem ao menos um ataque escrito (sessão de uma casa usando identificadores de outra), e uma ação nova sem ataque faz a suíte falhar. Cada método de repositório tem um caso no contrato de isolamento, que roda contra a memória, contra o Prisma simulado e contra um MongoDB de verdade.</p>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Decisões de segurança</h2>
+  <div class="grid">
+    <div class="card"><h3>O app só lê o banco</h3><p>A conexão é pelo Open Finance (Pluggy), só de leitura. Cada pessoa usa a própria chave, guardada cifrada com AES-256-GCM.</p></div>
+    <div class="card"><h3>Entrada só por convite</h3><p>Não existe cadastro aberto. O convite é um link de uso único, e a casa de destino nunca vem de formulário.</p></div>
+    <div class="card"><h3>Sessão que cai de verdade</h3><p>Cookie httpOnly com versão de sessão: trocar a senha ou pedir "sair de todos os aparelhos" derruba as sessões abertas.</p></div>
+    <div class="card"><h3>Biometria</h3><p>Entrada com digital ou rosto por passkeys (WebAuthn), com desafio assinado, de cinco minutos e de uso único.</p></div>
+    <div class="card"><h3>Login sem pistas</h3><p>Mesma frase e mesmo tempo de resposta para e-mail cadastrado ou não, com limite de tentativas guardado no banco.</p></div>
+    <div class="card"><h3>Administração sem valores</h3><p>O painel de quem administra mostra só nomes e contagens. Nenhum valor ou descrição de lançamento chega a ele.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap narrow">
+  <h2>Sincronização</h2>
+  <p>Uma rotina diária percorre as casas e dispara a atualização de cada uma em separado, e um aviso do provedor (webhook) adianta a atualização quando o banco tem novidade. A cada sincronização o app:</p>
+  <ul>
+    <li>aplica as regras de categoria que a casa criou e manda o resto para a fila Revisar;</li>
+    <li>reconhece transferência entre pessoas da mesma casa, para não contar como gasto nem como receita;</li>
+    <li>dá baixa em parcela de dívida quando o débito aparece na conta;</li>
+    <li>avisa de cobrança que parece duplicada e de assinatura que subiu de preço.</li>
+  </ul>
+</div></section>
+
+<section><div class="wrap narrow">
+  <h2>Testes</h2>
+  <p>São mais de cem arquivos de teste em Vitest, divididos pelas camadas: regras puras no domínio, casos de uso sobre o banco em memória, adaptadores com serviços simulados, e ações e rotas do servidor. Antes de publicar, um roteiro abre todas as telas no build de produção em modo demonstração e confere as rotas internas e as páginas públicas.</p>
+  <p>O que ainda depende de aparelho de verdade está escrito na documentação do projeto: biometria, avisos no celular e a janela de conexão com o banco.</p>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Stack</h2>
+  <div class="chips"><span>TypeScript</span><span>Next.js 16</span><span>React 19</span><span>Tailwind CSS 4</span><span>Prisma</span><span>MongoDB Atlas</span><span>Pluggy (Open Finance)</span><span>WebAuthn</span><span>Web Push</span><span>Vitest</span><span>pnpm</span><span>Vercel</span></div>
+  <p class="note" style="margin-top:22px">O código é privado, porque o app está em uso com dados financeiros de verdade. Posso apresentar o repositório e a documentação em uma conversa.</p>
+</div></section>
+
+<footer><div class="wrap">
+  <span>Silvia Gonçalves Silva · <a href="index.html">Portfólio</a> · <a href="https://github.com/Halker11" target="_blank" rel="noopener">GitHub</a></span>
+</div></footer>
+</body>
+</html>
