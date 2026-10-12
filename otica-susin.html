@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ótica Susin · Silvia Gonçalves</title>
+<meta name="description" content="Ótica Susin: landing page de demonstração para uma ótica, com catálogo por categoria e consulta de modelos pelo WhatsApp.">
+<meta name="color-scheme" content="dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<div class="page">
+<nav class="nav">
+  <a class="brand" href="index.html">silvia<span class="acc">_</span>gonçalves</a>
+  <button class="nav-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+  <div class="nav-links" id="menu">
+    <a href="index.html#projetos" class="on">Projetos</a><a href="educacao.html">Educação</a><a href="trajetoria.html">Trajetória</a>
+    <a class="nav-cta" href="contato.html">Contato</a>
+  </div>
+</nav>
+<main>
+<header class="hero-half">
+  <div>
+    <a class="back" href="index.html#projetos">← projetos / sites</a>
+    <h1 class="title sm">Ótica Susin</h1>
+    <p class="lead" style="max-width:none">Landing page de demonstração para uma ótica: o cliente marca o que procura e a consulta de modelos chega pronta no WhatsApp.</p>
+    <div class="rows">
+      <div><span class="label">Tipo</span><span>Landing page</span></div>
+      <div><span class="label">Modelo</span><span>Vitrine de produtos</span></div>
+      <div><span class="label">Stack</span><span>HTML · CSS · JavaScript</span></div>
+      <div><span class="label">Estágio</span><span>Demonstração</span></div>
+    </div>
+    <div class="btns"><a class="btn fill" href="https://gparts.vercel.app/modelos/otica-susin" target="_blank" rel="noopener">Abrir a demonstração ↗</a></div>
+  </div>
+  <div class="frame" style="align-self:center"><img src="img/otica-susin/site.webp" alt="O site no computador e no celular"></div>
+</header>
+<section class="sec split">
+  <h2>A ideia</h2>
+  <p class="prose">Uma ótica tem centenas de armações e não consegue manter todas num site. Em vez de catálogo completo, a página pergunta o que a pessoa procura e a loja responde com as opções.</p>
+</section>
+<section class="sec split">
+  <h2>Como funciona</h2>
+  <div style="display:flex;flex-direction:column;gap:16px;min-width:0">
+    <p class="prose">Quatro escolhas rápidas descrevem o pedido.</p>
+    <div class="tiles">
+      <div class="tile sm"><span class="slash">01</span><b>Categoria</b><span>Grau, sol, infantil ou lentes de contato, com mais de uma opção ao mesmo tempo.</span></div>
+      <div class="tile sm"><span class="slash">02</span><b>Estilo</b><span>Para quem é, os formatos de que a pessoa gosta e se já tem receita.</span></div>
+      <div class="tile sm"><span class="slash">03</span><b>Consulta</b><span>A loja recebe o pedido descrito e manda fotos das opções pelo WhatsApp.</span></div>
+    </div>
+  </div>
+</section>
+<section class="sec split">
+  <h2>Por baixo</h2>
+  <div class="points">
+    <span>A página chega pronta em HTML. Um script pequeno, embutido nela, cuida só das partes interativas.</span>
+    <span>Não carrega React nem outra biblioteca: o que vem de fora são as fontes, o mapa e alguns ícones.</span>
+    <span>Sem servidor: a página monta a mensagem e abre o WhatsApp do negócio com ela pronta.</span>
+  </div>
+</section>
+<section class="sec split">
+  <h2>Limites</h2>
+  <div class="points">
+    <span>É uma demonstração: o negócio ainda não é cliente, e textos, preços e prazos são ilustrativos.</span>
+    <span>Não há estoque na página: quem responde com os modelos é a loja.</span>
+  </div>
+</section>
+<a class="next" href="atendente.html">
+  <div><span class="label">próximo projeto</span><b>Atendente de WhatsApp</b></div><span>→</span>
+</a>
+</main>
+<footer class="foot">
+  <a href="contato.html">silvia.silva0909@gmail.com</a>
+  <div><a href="https://www.linkedin.com/in/silviasilva0909" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/Halker11" target="_blank" rel="noopener">GitHub</a><a href="https://wa.me/5541995893031" target="_blank" rel="noopener">WhatsApp</a></div>
+</footer>
+</div>
+<script src="site.js"></script>
+</body>
+</html>
