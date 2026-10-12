@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Imagens para livros · Silvia Gonçalves</title>
-<meta name="description" content="Imagens para livros: lê o DOCX de um livro didático, encontra as orientações de imagem e sugere fotos de banco via API.">
+<meta name="description" content="Imagens para livros: ferramenta interna que lê o DOCX de um livro didático, sugere imagens de banco e devolve o documento pronto para a revisão.">
 <meta name="color-scheme" content="dark">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,10 +26,12 @@
   <div>
     <a class="back" href="index.html#projetos">← projetos / automação</a>
     <h1 class="title sm">Imagens para livros</h1>
-    <p class="lead" style="max-width:none">Lê o DOCX de um livro didático, encontra as orientações de imagem, sugere fotos de banco pela API e gera o documento final.</p>
+    <p class="lead" style="max-width:none">Ferramenta interna de uma equipe editorial: lê o DOCX do livro didático, encontra os pedidos de imagem, sugere fotos de banco e devolve o documento pronto para a etapa seguinte.</p>
     <div class="rows">
-      <div><span class="label">Tipo</span><span>Ferramenta de automação editorial</span></div>
-      <div><span class="label">Stack</span><span>TypeScript · Python · APIs</span></div>
+      <div><span class="label">Tipo</span><span>Ferramenta interna de automação editorial</span></div>
+      <div><span class="label">Stack</span><span>TypeScript · Next.js · Python · MongoDB</span></div>
+      <div><span class="label">Testes</span><span>24 arquivos de teste</span></div>
+      <div><span class="label">Estágio</span><span>Protótipo em uso pela equipe</span></div>
     </div>
     <div class="btns"><a class="btn fill" href="contato.html">Quero ver funcionando</a></div>
   </div>
@@ -37,22 +39,45 @@
 </header>
 <section class="sec split">
   <h2>O problema</h2>
-  <p class="prose">No original de um livro didático, cada imagem é pedida por escrito, no meio do texto. Alguém precisa localizar cada pedido, procurar a foto num banco de imagens e devolver o documento com as escolhas.</p>
+  <p class="prose">No original de um livro didático, cada imagem é pedida por escrito, em verde, no meio do texto. Alguém precisa localizar cada pedido, procurar a foto num banco de imagens e devolver o documento com as escolhas, livro após livro.</p>
 </section>
 <section class="sec split">
-  <h2>Como funciona</h2>
+  <h2>As quatro etapas</h2>
   <div style="display:flex;flex-direction:column;gap:16px;min-width:0">
-    <div class="tiles">
-      <div class="tile sm"><span class="slash">01</span><b>Leitura</b><span>Abre o DOCX e identifica as orientações de imagem espalhadas pelo texto.</span></div>
-      <div class="tile sm"><span class="slash">02</span><b>Sugestão</b><span>Para cada orientação, consulta o banco de imagens pela API e traz opções.</span></div>
-      <div class="tile sm"><span class="slash">03</span><b>Documento final</b><span>Gera o DOCX de volta, com as imagens indicadas.</span></div>
+    <p class="prose">Começou pela busca de imagens e cresceu para o caminho inteiro do documento.</p>
+    <div class="tiles two">
+      <div class="tile sm"><b>Imagem</b><span>Acha as orientações de imagem e traz três sugestões do banco para cada uma. A pessoa escolhe, pede outra busca ou descarta.</span></div>
+      <div class="tile sm"><b>Unificação</b><span>Junta as unidades do livro num documento só e confere imagens, caracteres e orientações antes e depois.</span></div>
+      <div class="tile sm"><b>Texto</b><span>Separa só o texto novo para o revisor, que cobra por lauda, com um mapa de onde cada trecho saiu.</span></div>
+      <div class="tile sm"><b>Remontagem</b><span>Devolve o texto revisado ao lugar e audita o resultado em seis conferências.</span></div>
     </div>
+  </div>
+</section>
+<section class="sec split">
+  <h2>Onde a IA entra</h2>
+  <div class="points">
+    <span>Só quando falta um briefing ou uma legenda: ela sugere o texto, e a pessoa decide se usa.</span>
+    <span>Não escolhe imagem nem classifica orientação: isso é feito por regras.</span>
+    <span>Vão ao modelo só os parágrafos vizinhos, nunca o livro inteiro, porque o material é inédito.</span>
+    <span>A busca no banco exclui imagens geradas por IA.</span>
+  </div>
+</section>
+<section class="sec">
+  <div class="split">
+    <h2>O que deu trabalho</h2>
+    <p class="prose">Problemas que só apareceram com os documentos reais.</p>
+  </div>
+  <div class="tiles">
+    <div class="tile sm"><b>Documentos de até 30 MB</b><span>A hospedagem aceita 4 MB por envio. As imagens ficam no navegador e só o esqueleto do documento viaja: 63 MB viraram menos de 1 MB.</span></div>
+    <div class="tile sm"><b>Cor herdada do estilo</b><span>Em alguns documentos o verde não está no texto, vem do estilo do parágrafo. A leitura resolve as duas formas.</span></div>
+    <div class="tile sm"><b>Não entregar com defeito</b><span>A remontagem se recusa a concluir se algum trecho faltar, sobrar, duplicar ou mudar de ordem.</span></div>
   </div>
 </section>
 <section class="sec split">
   <h2>Limites</h2>
   <div class="points">
-    <span>A ferramenta sugere; a escolha de cada imagem continua com quem edita o livro.</span>
+    <span>Só aceita DOCX.</span>
+    <span>Infográficos, fluxogramas e linhas do tempo não são buscados: seguem para criação.</span>
     <span>O código é privado, por ser de uso interno.</span>
   </div>
 </section>

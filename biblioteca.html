@@ -26,10 +26,11 @@
   <div>
     <a class="back" href="index.html#projetos">← projetos / sistemas</a>
     <h1 class="title sm">Biblioteca pessoal</h1>
-    <p class="lead" style="max-width:none">Acervo, histórico de leitura, lista de desejos e a posição de cada livro na estante, no celular e no computador.</p>
+    <p class="lead" style="max-width:none">Acervo, histórico de leitura, empréstimos, lista de desejos e o lugar de cada livro na casa, no celular e no computador.</p>
     <div class="rows">
       <div><span class="label">Tipo</span><span>Sistema web de uso pessoal</span></div>
       <div><span class="label">Stack</span><span>React · Hono · Cloudflare D1</span></div>
+      <div><span class="label">Estágio</span><span>Em uso</span></div>
     </div>
     <div class="btns"><a class="btn fill" href="contato.html">Quero ver funcionando</a></div>
   </div>
@@ -37,23 +38,33 @@
 </header>
 <section class="sec split">
   <h2>O problema</h2>
-  <p class="prose">Quando a estante cresce, fica difícil lembrar o que já está em casa, o que já foi lido e em que prateleira cada livro ficou.</p>
+  <p class="prose">Quando a estante cresce, fica difícil lembrar o que já está em casa, o que já foi lido, com quem ficou cada livro emprestado e em que prateleira cada um está.</p>
 </section>
 <section class="sec split">
   <h2>Como funciona</h2>
   <div style="display:flex;flex-direction:column;gap:16px;min-width:0">
-    <p class="prose">São cinco áreas: Início, Acervo, Histórico, Estante e Desejos.</p>
+    <p class="prose">São cinco áreas: Início, Estante, Histórico, Empréstimos e Desejos.</p>
     <div class="tiles two">
-      <div class="tile sm"><b>Cadastro pelo ISBN</b><span>Digitando o código ou lendo o código de barras com a câmera, os dados do livro são preenchidos sozinhos.</span></div>
-      <div class="tile sm"><b>Histórico de leitura</b><span>Cada livro fica como não lido, lendo ou lido, e a mudança é feita direto na lista.</span></div>
-      <div class="tile sm"><b>Estante</b><span>Mostra os livros pela localização física, para achar onde cada um está guardado.</span></div>
-      <div class="tile sm"><b>Lista de desejos</b><span>Guarda o que ainda falta comprar. Ao marcar como comprado, o livro vai para o acervo como não lido.</span></div>
+      <div class="tile sm"><b>Cadastro pelo ISBN</b><span>Digitando o código ou lendo o código de barras com a câmera, o app preenche título, autor, editora, capa e sinopse.</span></div>
+      <div class="tile sm"><b>Estante</b><span>O acervo aparece agrupado pelo lugar onde cada livro está guardado, com busca e filtros.</span></div>
+      <div class="tile sm"><b>Empréstimos</b><span>Registra com quem está cada livro e há quantos dias, e não deixa emprestar mais cópias do que existem.</span></div>
+      <div class="tile sm"><b>Lista de desejos</b><span>Ao marcar um desejo como comprado, o livro entra no acervo como não lido, já com os dados preenchidos.</span></div>
     </div>
+  </div>
+</section>
+<section class="sec split">
+  <h2>O que deu trabalho</h2>
+  <div class="points">
+    <span>Os dados do ISBN vêm de três bases públicas consultadas ao mesmo tempo (BrasilAPI, Google Books e Open Library): a brasileira tem prioridade e as outras preenchem o que faltar.</span>
+    <span>O leitor de código de barras usa o recurso nativo do navegador e cai para uma biblioteca de reserva quando ele não existe.</span>
+    <span>Livro repetido não vira cadastro duplicado: o app avisa e oferece somar uma cópia.</span>
+    <span>O banco começou em MongoDB e foi trocado pelo D1 da Cloudflare, por incompatibilidade com o ambiente de publicação.</span>
   </div>
 </section>
 <section class="sec split">
   <h2>Limites</h2>
   <div class="points">
+    <span>Feito para uma pessoa só: não tem login nem contas.</span>
     <span>O código é privado, por ser de uso pessoal. Apresento numa conversa.</span>
   </div>
 </section>

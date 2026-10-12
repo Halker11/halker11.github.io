@@ -28,7 +28,7 @@
     <h1 class="title sm">Fluxo de revisão com IA</h1>
     <p class="lead" style="max-width:none">Cotejo de livros contra os originais, planilhas de erros, marcação de PDFs no padrão do Acrobat e auditorias, sempre com conferência humana.</p>
     <div class="rows">
-      <div><span class="label">Tipo</span><span>Fluxo de trabalho editorial</span></div>
+      <div><span class="label">Tipo</span><span>Rotinas de trabalho editorial</span></div>
       <div><span class="label">Stack</span><span>Python · IA generativa</span></div>
     </div>
     <div class="btns"><a class="btn fill" href="contato.html">Quero ver funcionando</a></div>
@@ -40,15 +40,35 @@
   <p class="prose">Revisar um livro didático é comparar o livro diagramado com o original do autor, linha por linha, registrar cada diferença e marcar a correção no PDF. É um trabalho longo, repetitivo e em que o cansaço erra.</p>
 </section>
 <section class="sec split">
+  <h2>Dois fluxos</h2>
+  <div style="display:flex;flex-direction:column;gap:16px;min-width:0">
+    <p class="prose">Cada um é uma sequência de fases, e cada fase termina com uma conferência.</p>
+    <div class="tiles two">
+      <div class="tile sm"><b>Levantamento de erros</b><span>Livro diagramado em PDF contra os originais dos autores. Sai uma planilha de erros, com o print de cada ocorrência, e o PDF marcado. Nove fases.</span></div>
+      <div class="tile sm"><b>Atualização de livro</b><span>Do texto revisado até um documento consolidado e congelado, e daí ao PDF marcado para a diagramação. Oito fases.</span></div>
+    </div>
+  </div>
+</section>
+<section class="sec split">
   <h2>Como funciona</h2>
   <div style="display:flex;flex-direction:column;gap:16px;min-width:0">
-    <p class="prose">Cada etapa repetitiva virou uma rotina, e a decisão continua com a revisora.</p>
+    <p class="prose">No levantamento de erros, o caminho é este.</p>
     <div class="tiles two">
-      <div class="tile sm"><b>Cotejo</b><span>Compara o livro diagramado com os originais e levanta as diferenças.</span></div>
-      <div class="tile sm"><b>Planilha de erros</b><span>Cada ocorrência vai para uma planilha, para a revisora decidir.</span></div>
-      <div class="tile sm"><b>Marcação no PDF</b><span>As correções aprovadas são gravadas no PDF, no padrão do Acrobat.</span></div>
-      <div class="tile sm"><b>Auditoria</b><span>Um laudo confere o resultado antes da entrega.</span></div>
+      <div class="tile sm"><b>Levantar</b><span>Um agente de IA por capítulo compara o livro com o original, todos ao mesmo tempo.</span></div>
+      <div class="tile sm"><b>Auditar</b><span>Outros agentes, independentes, tentam derrubar cada apontamento antes de ele ir para a planilha.</span></div>
+      <div class="tile sm"><b>Decidir</b><span>A revisora lê a planilha e decide o que é erro e o que fica. A IA não decide por ela.</span></div>
+      <div class="tile sm"><b>Marcar e conferir</b><span>As correções aprovadas vão para o PDF no padrão do Acrobat, e um laudo independente aprova ou reprova o arquivo.</span></div>
     </div>
+  </div>
+</section>
+<section class="sec split">
+  <h2>Cuidados</h2>
+  <div class="points">
+    <span>Nada avança de fase sem o sim da revisora.</span>
+    <span>O auditor não conhece o gerador: lê só o resultado e compara com as regras.</span>
+    <span>Trecho não encontrado faz a rotina parar, em vez de marcar o lugar errado.</span>
+    <span>Laudo aprovado não basta: as páginas marcadas ainda passam por verificação visual.</span>
+    <span>A IA não inventa conteúdo: dado sem fonte é reescrito sem o número, com aviso.</span>
   </div>
 </section>
 <section class="sec split">
@@ -58,7 +78,7 @@
 <section class="sec split">
   <h2>Limites</h2>
   <div class="points">
-    <span>Nada é entregue sem conferência e auditoria humana.</span>
+    <span>Aparência do traço e acerto editorial continuam com olho humano.</span>
     <span>O restante do código é privado, por ser de uso interno.</span>
   </div>
 </section>
